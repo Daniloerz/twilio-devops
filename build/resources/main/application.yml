@@ -1,0 +1,17 @@
+server:
+  port: 8084
+
+spring:
+  eureka:
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+  application:
+    name: twilio-powerup
+
+twilio:
+  accountSID: ${ACCOUNT_SID}
+  accountToken: ${AUTH_TOKEN}
+  fromNumber: ${FROM_NUMBER}
